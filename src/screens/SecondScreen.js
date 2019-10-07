@@ -20,15 +20,16 @@ const SecondScreen = ({navigation}) => {
         Steps to reproduce:
       </Text>
       <Text style={{fontSize: 17}}>
-        1. Move any object just a little bit on first screen
+        1. On first Screen, move any object just a little bit to any side.
       </Text>
       <Text style={{fontSize: 17}}>2. Change Screen</Text>
       <Text style={{fontSize: 17}}>
-        3. Go back to previous screen and you will see position is changed!
+        3. Go back to HomeScreen and you will see position is changed!
       </Text>
       <View style={{marginBottom: 30}} />
       <Text style={{fontSize: 17, color: 'rgb(100, 100, 100)'}}>
-        Note: that you can also see debug log in console.
+        Note: You can also see debug log in console that translation value was
+        changed.
       </Text>
       <View style={{marginBottom: 15}} />
       <Text style={{fontSize: 17, color: 'rgb(100, 100, 100)'}}>
