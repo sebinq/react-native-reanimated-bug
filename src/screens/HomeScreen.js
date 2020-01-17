@@ -1,5 +1,5 @@
 import React from 'react';
-import {Text, ScrollView, StyleSheet, View, Dimensions} from 'react-native';
+import {ScrollView, StyleSheet, View, Dimensions} from 'react-native';
 import Movable from '../components/Movable';
 
 const dimensions = Dimensions.get('screen');

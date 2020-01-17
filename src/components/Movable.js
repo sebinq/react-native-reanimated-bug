@@ -4,11 +4,7 @@ import Animated from 'react-native-reanimated';
 import {PanGestureHandler, State} from 'react-native-gesture-handler';
 import {memoize} from '../utils';
 
-const {Value, diffClamp, useCode, onChange, block, call} = Animated;
-
-const logChange = () => {
-  console.log('Object translation value was changed!');
-};
+const {Value, diffClamp} = Animated;
 
 const Movable = ({initX, initY, boundaries, containerStyle, children}) => {
   const state = memoize(new Value(State.UNDETERMINED));
@@ -23,10 +19,6 @@ const Movable = ({initX, initY, boundaries, containerStyle, children}) => {
     translationY,
   });
 
-  // without using diffClamp - everything is working just fine!
-  // const translateX = withOffset(translationX, state, offsetX);
-  // const translateY = withOffset(translationY, state, offsetY);
-
   const translateX = diffClamp(
     withOffset(translationX, state, offsetX),
     0,
@@ -37,13 +29,6 @@ const Movable = ({initX, initY, boundaries, containerStyle, children}) => {
     withOffset(translationY, state, offsetY),
     0,
     boundaries.height,
-  );
-
-  useCode(
-    block([
-      onChange([translateX], call([translateX], logChange)),
-      onChange([translateY], call([translateY], logChange)),
-    ]),
   );
 
   return (
