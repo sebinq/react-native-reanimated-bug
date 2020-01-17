@@ -1,12 +1,10 @@
 import React from 'react';
 import {Text, ScrollView, StyleSheet, View, Dimensions} from 'react-native';
-import {TouchableOpacity} from 'react-native-gesture-handler';
 import Movable from '../components/Movable';
 
 const dimensions = Dimensions.get('screen');
 
-const HomeScreen = ({navigation}) => {
-  console.log('HomeScreen is rendered');
+const HomeScreen = () => {
   return (
     <ScrollView style={{flex: 1}}>
       <Movable
@@ -23,11 +21,6 @@ const HomeScreen = ({navigation}) => {
         initY={255}>
         <View style={styles.greenBox} />
       </Movable>
-      <TouchableOpacity
-        onPress={() => navigation.navigate('Second')}
-        style={styles.btn}>
-        <Text>Move to next Screen!</Text>
-      </TouchableOpacity>
     </ScrollView>
   );
 };
